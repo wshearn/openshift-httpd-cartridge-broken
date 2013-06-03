@@ -7,6 +7,7 @@ Version: '0.1'
 License: "None"
 Vendor: Custom Cartridges INC
 Cartridge-Version: 0.0.1
+Cartridge-Vendor: rainbowdash
 Categories:
   - service
   - web_framework
