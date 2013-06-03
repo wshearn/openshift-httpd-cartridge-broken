@@ -289,7 +289,7 @@ UseCanonicalName Off
 # documents. By default, all requests are taken from this directory, but
 # symbolic links and aliases may be used to point to other locations.
 #
-DocumentRoot /etc/httpd/"<%= ENV['OPENSHIFT_REPO_DIR'] %>"
+DocumentRoot "<%= ENV['OPENSHIFT_REPO_DIR'] %>"
 
 #
 # Each directory to which Apache has access can be configured with respect
@@ -548,14 +548,14 @@ ServerSignature On
 # We include the /icons/ alias for FancyIndexed directory listings.  If you
 # do not use FancyIndexing, you may comment this out.
 #
-Alias /icons/ "/var/www/icons/"
+#Alias /icons/ "/var/www/icons/"
 
-<Directory "/var/www/icons">
-    Options Indexes MultiViews FollowSymLinks
-    AllowOverride None
-    Order allow,deny
-    Allow from all
-</Directory>
+#<Directory "/var/www/icons">
+#    Options Indexes MultiViews FollowSymLinks
+#    AllowOverride None
+#    Order allow,deny
+#    Allow from all
+#</Directory>
 
 #
 # WebDAV module configuration section.
@@ -852,20 +852,20 @@ AddOutputFilter INCLUDES .shtml
 # copying them to /your/include/path/, even on a per-VirtualHost basis.
 #
 
-Alias /error/ "/var/www/error/"
+#Alias /error/ "/var/www/error/"
 
-<IfModule mod_negotiation.c>
-<IfModule mod_include.c>
-    <Directory "/var/www/error">
-        AllowOverride None
-        Options IncludesNoExec
-        AddOutputFilter Includes html
-        AddHandler type-map var
-        Order allow,deny
-        Allow from all
-        LanguagePriority en es de fr
-        ForceLanguagePriority Prefer Fallback
-    </Directory>
+#<IfModule mod_negotiation.c>
+#<IfModule mod_include.c>
+#    <Directory "/var/www/error">
+#        AllowOverride None
+#        Options IncludesNoExec
+#        AddOutputFilter Includes html
+#        AddHandler type-map var
+#        Order allow,deny
+#        Allow from all
+#        LanguagePriority en es de fr
+#        ForceLanguagePriority Prefer Fallback
+#    </Directory>
 
 #    ErrorDocument 400 /error/HTTP_BAD_REQUEST.html.var
 #    ErrorDocument 401 /error/HTTP_UNAUTHORIZED.html.var
@@ -885,8 +885,8 @@ Alias /error/ "/var/www/error/"
 #    ErrorDocument 503 /error/HTTP_SERVICE_UNAVAILABLE.html.var
 #    ErrorDocument 506 /error/HTTP_VARIANT_ALSO_VARIES.html.var
 
-</IfModule>
-</IfModule>
+#</IfModule>
+#</IfModule>
 
 #
 # The following directives modify normal HTTP response behavior to
